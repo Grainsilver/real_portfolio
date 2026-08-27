@@ -1,69 +1,111 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Intro from "@/home/Intro";
+import Services from "@/home/Services";
+import Projects from "@/home/Projects";
+import Booking from "@/home/Booking";
+
+const techLogos = [
+  { icon: "/icons/supabass.WEBP", name: "" },
+  { icon: "/icons/Zappier.jpeg", name: "" },
+  { icon: "/icons/zustand-original.svg", name: "" },
+  { icon: "/icons/vscode-original.svg", name: "" },
+  { icon: "/icons/vite-original-wordmark.svg", name: "" },
+  { icon: "/icons/vercel-original-wordmark.svg", name: "" },
+  { icon: "/icons/typescript-original.svg", name: "" },
+  { icon: "/icons/trello.png", name: "" },
+  { icon: "/icons/tailwinds.WEBP", name: "" },
+  { icon: "/icons/redux.PNG", name: "" },
+  { icon: "/icons/rust.PNG", name: "" },
+  { icon: "/icons/slack.PNG", name: "" },
+  { icon: "/icons/powershell-original.svg", name: "" },
+  { icon: "/icons/postman-original.svg", name: "" },
+  { icon: "/icons/postgresql-original-wordmark.svg", name: "" },
+  { icon: "/icons/playwright-original.svg", name: "" },
+  { icon: "/icons/oauth-original.svg", name: "" },
+  { icon: "/icons/npm-original-wordmark.svg", name: "" },
+  { icon: "/icons/nextjs-original-wordmark.svg", name: "" },
+  { icon: "/icons/mysql-original-wordmark.svg", name: "" },
+  { icon: "/icons/make.PNG", name: "" },
+  { icon: "/icons/Lemlist.PNG", name: "" },
+  { icon: "/icons/hubspot.jpeg", name: "" },
+  { icon: "/icons/devicon-original.svg", name: "" },
+  { icon: "/icons/html5-original-wordmark.svg", name: "" },
+  { icon: "/icons/mongodb-original-wordmark.svg", name: "" },
+  { icon: "/icons/express-original-wordmark.svg", name: "" },
+  { icon: "/icons/docker-original-wordmark.svg", name: "" },
+  { icon: "/icons/git-original-wordmark.svg", name: "" },
+  { icon: "/icons/css3-original-wordmark.svg", name: "" },
+  { icon: "/icons/GraphQL.PNG", name: "" },
+  { icon: "/icons/clickup.PNG", name: "" },
+  { icon: "/icons/amazonwebservices-original-wordmark.svg", name: "" },
+  { icon: "/icons/Apollo.jpeg", name: "" },
+  { icon: "/icons/asana.jpeg", name: "" },
+  { icon: "/icons/figma.png", name: "" },
+  { icon: "/icons/bash-original.svg", name: "" },
+  { icon: "/icons/canva-original.svg", name: "" },
+  { icon: "/icons/cloudflare-original-wordmark (1).svg", name: "" },
+];
+
+type Pos = { left: number; top: number; dur: number; delay: number };
 
 export default function Home() {
+  const [positions, setPositions] = useState<Pos[]>([]);
+
+  useEffect(() => {
+  const count = techLogos.length;
+  setPositions(
+    techLogos.map((_, i) => ({
+      // even horizontal band per logo, with slight jitter so it's not a grid
+      left: (i / count) * 100 + (Math.random() * (100 / count) * 0.6),
+      top: -(Math.random() * 800) - 100,   // deeper stagger so they don't clump vertically
+      dur: 14 + Math.random() * 12,
+      delay: Math.random() * -30,
+    }))
+  );
+}, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <div className="tech-bg">
+        <div className="floating-logos">
+          {positions.length > 0 &&
+            techLogos.map((tech, i) => (
+              <div
+                key={i}
+                className="tech-tag"
+                style={{
+                  left: `${positions[i].left}%`,
+                  top: `${positions[i].top}px`,
+                  animationDuration: `${positions[i].dur}s`,
+                  animationDelay: `${positions[i].delay}s`,
+                }}
+              >
+                <Image
+                  src={tech.icon}
+                  alt="Technology Logo"
+                  width={40}
+                  height={40}
+                />
+              </div>
+            ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </div>
+
+      <Navbar />
+
+      <main className="page-wrapper">
+        <Intro />
+        <Services />
+        <Projects />
+        <Booking />
       </main>
-    </div>
+
+      <Footer />
+    </>
   );
 }
