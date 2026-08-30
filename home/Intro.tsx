@@ -41,17 +41,18 @@ export default function Intro() {
             </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-6">   {/* Intro.tsx, was gap-4 */}
-            <a href="#booking" className="btn">
-              Book a Consultation
-            </a>
-            <a
-              href="#projects"
-              className="px-6 py-3 rounded-[10px] border border-[#2A1A12]/30 text-[#2A1A12] hover:bg-[#2A1A12]/5 transition"
-            >
-              View Projects
-            </a>
-          </div>
+          <div className="flex flex-col sm:flex-row gap-4 mt-6">
+  <a href="#booking" className="btn text-center">
+    Book a Consultation
+  </a>
+  
+    <a href="#projects"
+    className="text-center px-6 py-3 rounded-[10px] border transition hover:opacity-70"
+    style={{ borderColor: "rgba(42,26,18,0.3)", color: "var(--text)" }}
+  >
+    View Projects
+  </a>
+</div>
         </div>
       </div>
     </section>

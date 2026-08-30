@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --bg: #FDF8F3;
   --card: #F3EBE2;
@@ -7,6 +9,15 @@
   --accent-hover: #3B2A20;
   --text: #1A120C;
   --muted: #4A3B30;
+}
+
+.dark {
+  --bg: #1A120C;
+  --card: #2A1F17;
+  --accent: #E8D9C5;
+  --accent-hover: #D8C4AC;
+  --text: #F5EFE9;
+  --muted: #C9B8A8;
 }
 
 * {
@@ -31,6 +42,7 @@ body {
   line-height: 1.65;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Typography */
@@ -56,11 +68,11 @@ p, span, a, li {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F3EBE2;
+  background: var(--card);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2A1A12;
+  background: var(--accent);
   border-radius: 10px;
 }
 
@@ -71,9 +83,10 @@ p, span, a, li {
 .tech-bg {
   position: fixed;
   inset: 0;
-  background: #F6EEE5;
+  background: var(--bg);
   overflow: hidden;
   z-index: -1;
+  transition: background 0.3s ease;
 }
 
 .floating-logos {
@@ -104,6 +117,12 @@ p, span, a, li {
   transition: all .3s ease;
 }
 
+.dark .tech-tag {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(245, 239, 233, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
 .tech-tag:hover {
   opacity: 1;
   transform: scale(1.08);
@@ -118,7 +137,7 @@ p, span, a, li {
 .tech-tag span {
   font-size: 14px;
   font-weight: 600;
-  color: #2A1A12;
+  color: var(--accent);
   white-space: nowrap;
 }
 
@@ -159,10 +178,18 @@ p, span, a, li {
   transition: .25s ease;
 }
 
+.dark .card {
+  border: 1px solid rgba(245, 239, 233, .15);
+}
+
 .card:hover {
   transform: translateY(-5px);
-  background: #EBE1D5;
+  background: var(--accent-hover);
   border-color: rgba(42, 26, 18, .3);
+}
+
+.dark .card:hover {
+  border-color: rgba(245, 239, 233, .3);
 }
 
 /* =====================================================
@@ -171,7 +198,7 @@ p, span, a, li {
 
 .btn {
   background: var(--accent);
-  color: white !important;
+  color: var(--bg) !important;
   padding: 12px 24px;
   border-radius: 10px;
   font-weight: 600;
