@@ -17,14 +17,6 @@ const projects: Project[] = [
     status: "Live",
   },
   {
-    title: "NHS Document Flagging AI Agent",
-    desc: "An AI agent that automatically scans and flags NHS PDF documents based on defined criteria.",
-    stack: "TypeScript · AI/LLM · PDF Processing",
-    github: "",
-    demo: "https://ai-agent-4qub.vercel.app",
-    status: "Live",
-  },
-  {
     title: "CRM Tool — West Africa",
     desc: "A feature-rich CRM built for the West African market, with automation for lead management and sales workflows.",
     stack: "Next.js · Node.js · Supabase",
@@ -47,22 +39,6 @@ const projects: Project[] = [
     github: "lead-manager-nu.vercel.app",
     demo: "",
     status: "Live",
-  },
-  {
-    title: "CRM Tool — West Africa",
-    desc: "A feature-rich CRM built for the West African market, with automation for lead management and sales workflows.",
-    stack: "Next.js · Node.js · Supabase",
-    github: "",
-    demo: "https://crm-saas-ashen.vercel.app",
-    status: "Live",
-  },
-  {
-    title: "Automation Tool",
-    desc: "A workflow automation platform for streamlining repetitive business processes.",
-    stack: "Coming Soon",
-    github: "",
-    demo: "",
-    status: "In Progress",
   },
 ];
 
