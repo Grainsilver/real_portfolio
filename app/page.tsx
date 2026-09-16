@@ -8,6 +8,7 @@ import Intro from "@/home/Intro";
 import Services from "@/home/Services";
 import Projects from "@/home/Projects";
 import Booking from "@/home/Booking";
+import Certifications from "@/components/Certifications";
 
 const techLogos = [
   { icon: "/icons/supabass.WEBP", name: "" },
@@ -102,6 +103,7 @@ export default function Home() {
         <Intro />
         <Services />
         <Projects />
+        <Certifications />
         <Booking />
       </main>
 
