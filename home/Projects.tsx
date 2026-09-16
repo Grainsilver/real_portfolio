@@ -13,7 +13,7 @@ const projects: Project[] = [
     desc: "A full-stack lead management system with a REST API for creating and retrieving leads, status tracking, and a clean interface for managing the pipeline.",
     stack: "Backend: Node.js, Express, PostgreSQL, Frontend: Next.js. React, Deployment: Vercel (frontend) Railway / Render / Heroku (backend) ",
     github: "https://github.com/yourusername/lead-manager",
-    demo: "https://realportfolio-nine.vercel.app",
+    demo: "https://lead-manager-nu.vercel.app",
     status: "Live",
   },
   {
