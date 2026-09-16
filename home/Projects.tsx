@@ -8,12 +8,12 @@ type Project = {
 };
 
 const projects: Project[] = [
-  {
-    title: "NHS Document Flagging AI Agent",
-    desc: "An AI agent that automatically scans and flags NHS PDF documents based on defined criteria.",
-    stack: "TypeScript · AI/LLM · PDF Processing",
-    github: "",
-    demo: "https://ai-agent-4qub.vercel.app",
+   {
+    title: "Lead Manager",
+    desc: "A full-stack lead management system with a REST API for creating and retrieving leads, status tracking, and a clean interface for managing the pipeline.",
+    stack: "Backend: Node.js, Express, PostgreSQL, Frontend: Next.js. React, Deployment: Vercel (frontend) Railway / Render / Heroku (backend) ",
+    github: "https://github.com/yourusername/lead-manager",
+    demo: "realportfolio-nine.vercel.app",
     status: "Live",
   },
   {
@@ -25,20 +25,20 @@ const projects: Project[] = [
     status: "Live",
   },
   {
-    title: "Lead Manager",
-    desc: "A full-stack lead management system with a REST API for creating and retrieving leads, status tracking, and a clean interface for managing the pipeline.",
-    stack: "Backend: Node.js, Express, MongoDB + Mongoose (PostgreSQL), Frontend: Next.js. React, Deployment: Vercel (frontend) Railway / Render / Heroku (backend) ",
-    github: "https://github.com/yourusername/lead-manager",
-    demo: "https://your-lead-manager.vercel.app",
+    title: "NHS Document Flagging AI Agent",
+    desc: "An AI agent that automatically scans and flags NHS PDF documents based on defined criteria.",
+    stack: "TypeScript · AI/LLM · PDF Processing",
+    github: "",
+    demo: "https://ai-agent-4qub.vercel.app",
     status: "Live",
   },
   {
     title: "Automation Tool",
     desc: "A workflow automation platform for streamlining repetitive business processes.",
     stack: "",
-    github: "lead-manager-nu.vercel.app",
+    github: "",
     demo: "",
-    status: "Live",
+    status: "Coming Soon",
   },
 ];
 
