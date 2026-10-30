@@ -19,7 +19,7 @@ export default function Booking() {
             Send Email
           </a>
           <a
-            href="https://calendly.com/agbonkpolorlilianesohe/30min"
+            href="https://calendar.app.google/9xxZ4PdK1GNkaa4v8"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-[10px] border border-[#2A1A12]/40 text-[#2A1A12] hover:bg-[#2A1A12]/5 transition"
