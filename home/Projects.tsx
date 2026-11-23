@@ -18,7 +18,17 @@ type Project = {
 };
 
 const fullStackProjects: Project[] = [
+{
+  title: "LEMA — AI Pattern Drafting",
+  desc: "An AI tool for tailors and designers that turns garment photos into step-by-step cutting instructions, with 3D mannequins, guided measuring and fabric estimates.",
+  stack: "Next.js · AI/LLM · 3D Mannequin · SaaS",
+  github: "",
+  demo: "https://partener-drafting.vercel.app",
+  status: "Live",
+},
+
   {
+    
     title: "Lead Manager",
     desc: "A full-stack lead management system with a REST API for creating and retrieving leads, status tracking, and a clean interface for managing the pipeline.",
     stack: "Next.js · Node.js · Express · PostgreSQL",
