@@ -5,6 +5,7 @@
 :root {
   --bg: #FDF8F3;
   --card: #F3EBE2;
+  --card-hover: #EBE1D5;
   --accent: #2A1A12;
   --accent-hover: #3B2A20;
   --text: #1A120C;
@@ -14,6 +15,7 @@
 .dark {
   --bg: #1A120C;
   --card: #2A1F17;
+  --card-hover: #34281E;
   --accent: #E8D9C5;
   --accent-hover: #D8C4AC;
   --text: #F5EFE9;
@@ -184,7 +186,7 @@ p, span, a, li {
 
 .card:hover {
   transform: translateY(-5px);
-  background: var(--accent-hover);
+  background: var(--card-hover);
   border-color: rgba(42, 26, 18, .3);
 }
 
@@ -219,4 +221,14 @@ p, span, a, li {
   max-width: 1150px;
   margin: auto;
   padding: 0 24px;
+}
+
+/* =====================================================
+   Media protection
+===================================================== */
+
+img,
+video {
+  -webkit-user-drag: none;
+  user-select: none;
 }
