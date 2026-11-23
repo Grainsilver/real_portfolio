@@ -46,7 +46,7 @@ export default function Footer() {
               className="text-sm leading-relaxed"
               style={{ color: "var(--muted)" }}
             >
-              Software Engineer | Web Developer | UI/UX Designer | Tech Enthusiast
+              Software Engineer | Workflow Automation (n8n, Make, Zapier, Airtable)
             </p>
           </div>
 
