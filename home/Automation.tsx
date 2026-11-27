@@ -45,7 +45,26 @@ const workflows: Workflow[] = [
       { src: "/zappier/06_slack_alerts.jpg", caption: "Slack alerts" },
     ],
   },
+
+    {
+    title: "Salesforce Sandbox Refresh",
+    status: "Completed",
+    desc: "An n8n workflow that copies Salesforce Production data into a Sandbox: Accounts, Contacts and Opportunities stay linked, personal data is masked, and re-runs update instead of duplicating. Every run ends with a Pass/Fail report.",
+    stack: ["n8n", "Salesforce", "JWT / OAuth 2.0", "REST API", "Docker"],
+    video: {
+      src: "/salesforce/Sandbox_Refresh_Assistant_Demo.mp4",
+      poster: "/salesforce/01_cover.jpg",
+    },
+    steps: [
+      { src: "/salesforce/02_workflow.jpg", caption: "n8n workflow" },
+      { src: "/salesforce/03_masking.jpg", caption: "Data masking" },
+      { src: "/salesforce/04_upsert.jpg", caption: "Upsert on Source Id" },
+      { src: "/salesforce/05_jwt.jpg", caption: "JWT secure login" },
+      { src: "/salesforce/06_report.jpg", caption: "Pass/Fail report" },
+    ],
+  },
 ];
+
 
 const line = "color-mix(in srgb, var(--text) 14%, transparent)";
 const soft = "color-mix(in srgb, var(--text) 8%, transparent)";
